@@ -123,24 +123,33 @@ body {
 
 .header-capacity-label {
     font-size: 1rem;
-    opacity: 0.9;
-    font-weight: 500;
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .header-capacity-value {
-    font-size: 2rem;
-    font-weight: bold;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .header-capacity-highlight {
-    color: var(--accent-gold);
-    background: rgba(243, 156, 18, 0.2);
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
+    color: #000000 !important;
+    background: rgba(243, 156, 18, 0.2) !important;
+    border: 2px solid #f39c12 !important;
 }
 
 .header-capacity-negative {
-    color: #ff6b6b;
+    color: #ff3030 !important;
+    background: rgba(255, 48, 48, 0.15) !important;
+    border: 2px solid #ff3030 !important;
 }
 
 .header-capacity-gauge {
@@ -148,10 +157,18 @@ body {
 }
 
 .header-capacity-gauge .progress {
-    height: 12px;
-    background-color: rgba(255,255,255,0.2);
+    height: 16px;
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 8px;
+    width: 140px;
+    border: 2px solid rgba(255,255,255,0.5);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.header-capacity-gauge .progress-bar {
+    background: linear-gradient(90deg, #e74c3c, #f39c12, #f1c40f) !important;
     border-radius: 6px;
-    width: 120px;
+    box-shadow: 0 0 10px rgba(241, 196, 15, 0.5);
 }
 
 /* Sidebar */
