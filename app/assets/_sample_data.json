@@ -552,12 +552,122 @@
       "activity": [
         { "text": "Requirements gathered", "time": "1 week ago" }
       ]
+    },
+    {
+      "id": 26,
+      "number": "US-126",
+      "title": "Add file upload functionality",
+      "estimate_sp": 8,
+      "dev": "Nadia",
+      "team": "console",
+      "progression": 0,
+      "status": "Ready to develop",
+      "source": "jira",
+      "type": "Feature",
+      "sprint": "Sprint 16",
+      "description": "Allow users to upload and manage files within the application.",
+      "checklist": [
+        { "id": "check77", "text": "Design upload interface", "checked": false },
+        { "id": "check78", "text": "Implement file validation", "checked": false },
+        { "id": "check79", "text": "Add progress indicators", "checked": false }
+      ],
+      "activity": [
+        { "text": "Feature requested", "time": "2 weeks ago" }
+      ]
+    },
+    {
+      "id": 27,
+      "number": "US-127",
+      "title": "Implement caching strategy",
+      "estimate_sp": 13,
+      "dev": "Olivier",
+      "team": "core",
+      "progression": 25,
+      "status": "In development",
+      "source": "ado",
+      "type": "Performance",
+      "sprint": "Sprint 15",
+      "description": "Implement Redis caching to improve application performance.",
+      "checklist": [
+        { "id": "check80", "text": "Setup Redis server", "checked": true },
+        { "id": "check81", "text": "Implement cache layers", "checked": false },
+        { "id": "check82", "text": "Add cache invalidation", "checked": false }
+      ],
+      "activity": [
+        { "text": "Redis server configured", "time": "3 days ago" }
+      ]
+    },
+    {
+      "id": 28,
+      "number": "US-128",
+      "title": "Create user onboarding flow",
+      "estimate_sp": null,
+      "dev": "Patricia",
+      "team": "extend",
+      "progression": 60,
+      "status": "In development",
+      "source": "jira",
+      "type": "UX",
+      "sprint": "Sprint 15",
+      "description": "Design and implement guided onboarding for new users.",
+      "checklist": [
+        { "id": "check83", "text": "Design onboarding steps", "checked": true },
+        { "id": "check84", "text": "Create interactive tour", "checked": true },
+        { "id": "check85", "text": "Add progress tracking", "checked": false }
+      ],
+      "activity": [
+        { "text": "Interactive tour completed", "time": "1 day ago" }
+      ]
+    },
+    {
+      "id": 29,
+      "number": "US-129",
+      "title": "Fix SSL certificate renewal",
+      "estimate_sp": 2,
+      "dev": "Quentin",
+      "team": "core",
+      "progression": 100,
+      "status": "Done",
+      "source": "ado",
+      "type": "Bug",
+      "sprint": "Sprint 14",
+      "description": "Automate SSL certificate renewal process.",
+      "checklist": [
+        { "id": "check86", "text": "Setup auto-renewal script", "checked": true },
+        { "id": "check87", "text": "Test renewal process", "checked": true },
+        { "id": "check88", "text": "Add monitoring alerts", "checked": true }
+      ],
+      "activity": [
+        { "text": "Auto-renewal deployed", "time": "3 hours ago" }
+      ]
+    },
+    {
+      "id": 30,
+      "number": "US-130",
+      "title": "Implement data visualization",
+      "estimate_sp": 21,
+      "dev": "Rachel",
+      "team": "console",
+      "progression": 15,
+      "status": "In development",
+      "source": "jira",
+      "type": "Feature",
+      "sprint": "Sprint 16",
+      "description": "Add charts and graphs for data analysis.",
+      "checklist": [
+        { "id": "check89", "text": "Choose charting library", "checked": true },
+        { "id": "check90", "text": "Implement basic charts", "checked": false },
+        { "id": "check91", "text": "Add interactive features", "checked": false }
+      ],
+      "activity": [
+        { "text": "Chart.js library integrated", "time": "2 days ago" }
+      ]
     }
   ],
   "capacity_data": {
-    "total_sp": 650,
-    "capacity": 400,
-    "delta": -250
+    "total_sp": 782,
+    "capacity": 750,
+    "delta": -32
   },
   "team_colors": {
     "console": "#17a2b8",

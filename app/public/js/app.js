@@ -82,11 +82,64 @@ class SPagetApp {
             });
         }
         
-        // Fermer avec Escape
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && this.rightPanel && this.rightPanel.classList.contains('show')) {
+        // Fermeture du panneau avec Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
                 this.closeRightPanel();
             }
+        }.bind(this));
+
+        // Gestion du bouton Rafraîchir
+        const refreshBtn = document.getElementById('refreshBtn');
+        const refreshDropdownItems = document.querySelectorAll('[data-source]');
+
+        // Fonction pour simuler le rafraîchissement
+        function simulateRefresh(source = 'all', duration = 2000) {
+            refreshBtn.classList.add('loading');
+            
+            // Mettre à jour le texte selon la source
+            const refreshText = refreshBtn.querySelector('.refresh-text');
+            const originalText = refreshText.textContent;
+            
+            switch(source) {
+                case 'jira':
+                    refreshText.textContent = 'JIRA...';
+                    break;
+                case 'ado':
+                    refreshText.textContent = 'Azure DevOps...';
+                    break;
+                default:
+                    refreshText.textContent = 'Rafraîchir...';
+            }
+            
+            setTimeout(() => {
+                refreshBtn.classList.remove('loading');
+                refreshText.textContent = originalText;
+                
+                // Optionnel : afficher une notification de succès
+                console.log(`Rafraîchissement ${source} terminé`);
+            }, duration);
+        }
+
+        // Clic sur le bouton principal
+        if (refreshBtn) {
+            refreshBtn.addEventListener('click', function() {
+                if (!this.classList.contains('loading')) {
+                    simulateRefresh('all');
+                }
+            });
+        }
+
+        // Clic sur les options du dropdown
+        refreshDropdownItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const source = this.getAttribute('data-source');
+                
+                if (!refreshBtn.classList.contains('loading')) {
+                    simulateRefresh(source);
+                }
+            });
         });
     }
     
