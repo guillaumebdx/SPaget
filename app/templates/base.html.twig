@@ -22,26 +22,21 @@
         'delta': delta ?? -250
     } %}
     
-    <div class="container-fluid flex-grow-1 p-0">
-        <div class="row g-0 h-100">
-            <!-- Sidebar -->
-            <div class="col-auto">
-                {% include 'partials/sidebar.html.twig' %}
-            </div>
+    <!-- Layout principal -->
+    <div class="app-layout">
+        <!-- Sidebar -->
+        {% include 'partials/sidebar.html.twig' %}
+        
+        <!-- Zone de contenu principal -->
+        <div class="main-wrapper">
+            <!-- Contenu de la page -->
+            <main class="main-content">
+                {% block body %}{% endblock %}
+            </main>
             
-            <!-- Main Content -->
-            <div class="col main-content">
-                <div class="row g-0 h-100">
-                    <!-- Content Area -->
-                    <div class="col content-area" id="content-area">
-                        {% block body %}{% endblock %}
-                    </div>
-                    
-                    <!-- Right Panel -->
-                    <div class="col-auto right-panel-container" id="right-panel-container">
-                        {% include 'partials/right-panel.html.twig' %}
-                    </div>
-                </div>
+            <!-- Right Panel -->
+            <div class="right-panel-container" id="right-panel-container">
+                {% include 'partials/right-panel.html.twig' %}
             </div>
         </div>
     </div>
