@@ -141,6 +141,42 @@ class SPagetApp {
                 }
             });
         });
+
+        // Gestion des switches candidat
+        const candidateSwitches = document.querySelectorAll('.candidate-switch');
+        candidateSwitches.forEach(switchEl => {
+            // Empêcher l'ouverture du right panel lors du clic sur le switch
+            switchEl.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+            
+            switchEl.addEventListener('change', function(e) {
+                e.stopPropagation(); // Empêcher la propagation aussi sur change
+                
+                const storyId = this.getAttribute('data-story-id');
+                const isCandidate = this.checked;
+                const row = document.querySelector(`tr[data-story-id="${storyId}"]`);
+                
+                if (row) {
+                    if (isCandidate) {
+                        row.classList.remove('story-not-candidate');
+                    } else {
+                        row.classList.add('story-not-candidate');
+                    }
+                }
+                
+                // Ici on pourrait ajouter un appel AJAX pour sauvegarder l'état
+                console.log(`Story ${storyId} candidate status: ${isCandidate}`);
+            });
+        });
+
+        // Empêcher l'ouverture du right panel sur la colonne candidat
+        const candidateCells = document.querySelectorAll('.story-candidate');
+        candidateCells.forEach(cell => {
+            cell.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        });
     }
     
     /**

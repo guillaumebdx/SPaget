@@ -67,12 +67,12 @@
                         <th scope="col" class="col-source">Source</th>
                         <th scope="col" class="col-progression">Progression</th>
                         <th scope="col" class="col-status">Status</th>
-                        <th scope="col" class="col-actions"></th>
+                        <th scope="col" class="col-candidate">Candidat</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for item in items ?? sample_items %}
-                    <tr class="story-row" data-story-id="{{ item.id }}" data-bs-toggle="tooltip" title="Cliquer pour voir les détails">
+                    <tr class="story-row {{ (item.candidate is defined and item.candidate == false) ? 'story-not-candidate' : '' }}" data-story-id="{{ item.id }}">
                         <td class="story-number">{{ item.number ?? loop.index }}</td>
                         <td class="story-title">
                             <div class="title-content">
@@ -139,14 +139,16 @@
                                 {{ item.status }}
                             </span>
                         </td>
-                        <td class="story-actions">
-                            <div class="action-buttons">
-                                <button class="btn btn-sm btn-outline-secondary" title="Éditer">
-                                    <i class="bi bi-pencil"></i>
-                                </button>
-                                <button class="btn btn-sm btn-outline-secondary" title="Plus d'options">
-                                    <i class="bi bi-three-dots"></i>
-                                </button>
+                        <td class="story-candidate">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input candidate-switch" 
+                                       type="checkbox" 
+                                       id="candidate-{{ item.id }}" 
+                                       {{ item.candidate ?? true ? 'checked' : '' }}
+                                       data-story-id="{{ item.id }}">
+                                <label class="form-check-label visually-hidden" for="candidate-{{ item.id }}">
+                                    Candidat pour le sprint
+                                </label>
                             </div>
                         </td>
                     </tr>

@@ -12,6 +12,7 @@
       "source": "jira",
       "type": "Story",
       "sprint": "Sprint 12",
+      "candidate": true,
       "description": "Develop a search feature allowing users to search for content within the application.",
       "checklist": [
         { "id": "check1", "text": "Create search API endpoint", "checked": true },
@@ -34,6 +35,7 @@
       "source": "ado",
       "type": "Task",
       "sprint": "Sprint 12",
+      "candidate": false,
       "description": "Update the CI/CD pipeline to support new deployment strategies.",
       "checklist": [
         { "id": "check4", "text": "Review current pipeline", "checked": false },
@@ -56,6 +58,7 @@
       "source": "jira",
       "type": "Bug",
       "sprint": "Sprint 12",
+      "candidate": true,
       "description": "Fix critical bugs in the Call/hexdesp module that are causing system instability.",
       "checklist": [
         { "id": "check7", "text": "Identify root cause", "checked": true },
@@ -79,7 +82,8 @@
       "source": "ado",
       "type": "Epic",
       "sprint": "Sprint 13",
-      "description": "Major refactoring of the MK-Lacssum module to improve performance and maintainability.",
+      "candidate": true,
+      "description": "Refactor the MK-Lacssum punch functionality for better performance and maintainability.",
       "checklist": [
         { "id": "check10", "text": "Analyze current architecture", "checked": false },
         { "id": "check11", "text": "Design new structure", "checked": false },
@@ -279,7 +283,8 @@
       "source": "jira",
       "type": "Enhancement",
       "sprint": "Sprint 14",
-      "description": "Implement dark mode theme for better user experience.",
+      "candidate": true,
+      "description": "Implement role-based access control for different user types.",
       "checklist": [
         { "id": "check38", "text": "Design dark theme", "checked": true },
         { "id": "check39", "text": "Update CSS variables", "checked": false },
@@ -389,7 +394,8 @@
       "source": "ado",
       "type": "Feature",
       "sprint": "Sprint 15",
-      "description": "Build comprehensive admin panel for system management.",
+      "candidate": false,
+      "description": "Add comprehensive logging to track user activities and system events.",
       "checklist": [
         { "id": "check53", "text": "Design admin layout", "checked": true },
         { "id": "check54", "text": "Add user management", "checked": false },
@@ -587,7 +593,8 @@
       "source": "ado",
       "type": "Performance",
       "sprint": "Sprint 15",
-      "description": "Implement Redis caching to improve application performance.",
+      "candidate": true,
+      "description": "Optimize database queries to improve application performance.",
       "checklist": [
         { "id": "check80", "text": "Setup Redis server", "checked": true },
         { "id": "check81", "text": "Implement cache layers", "checked": false },

@@ -415,8 +415,7 @@ body {
 .sidebar-toggle {
     position: absolute;
     right: -12px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 80px;
     width: 24px;
     height: 48px;
     background: var(--bg-card);
@@ -429,6 +428,7 @@ body {
     cursor: pointer;
     transition: all 0.2s ease;
     z-index: 10;
+    box-shadow: 2px 0 4px rgba(0,0,0,0.1);
 }
 
 .sidebar-toggle:hover {
@@ -556,13 +556,54 @@ body {
     z-index: 10;
 }
 
-.stories-table tbody tr {
+.stories-table .story-row:hover {
+    background-color: rgba(0,123,255,0.1);
     cursor: pointer;
-    transition: background-color 0.2s ease;
 }
 
-.stories-table tbody tr:hover {
-    background-color: rgba(0,123,255,0.05);
+/* Lignes non-candidates - CSS renforcé */
+tr.story-row.story-not-candidate {
+    background-color: rgba(220, 53, 69, 0.15) !important;
+    border-left: 4px solid #dc3545 !important;
+}
+
+tr.story-row.story-not-candidate:hover {
+    background-color: rgba(220, 53, 69, 0.25) !important;
+}
+
+tr.story-row.story-not-candidate td {
+    background-color: rgba(220, 53, 69, 0.08) !important;
+    border-top: 1px solid rgba(220, 53, 69, 0.3) !important;
+}
+
+/* Test pour voir si le CSS fonctionne */
+.story-not-candidate {
+    background-color: rgba(255, 0, 0, 0.3) !important;
+}
+
+/* Colonne candidat */
+.col-candidate {
+    width: 80px;
+    text-align: center;
+}
+
+.story-candidate {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.candidate-switch {
+    cursor: pointer;
+}
+
+.candidate-switch:checked {
+    background-color: var(--accent-gold);
+    border-color: var(--accent-gold);
+}
+
+.candidate-switch:focus {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 0.25rem rgba(243, 156, 18, 0.25);
 }
 
 .story-number {
