@@ -3,14 +3,52 @@
         <div class="container-fluid">
             <!-- Logo et titre -->
             <a class="navbar-brand d-flex align-items-center" href="{{ path('dashboard') ?? '#' }}">
-                <img src="{{ asset('logoSPAget.png') }}" alt="SPaget Logo" class="logo-img me-2">
-                <span class="brand-text">SPAGET</span>
+                <img src="{{ asset('logoSPAget.png') }}" alt="SPaGET Logo" class="logo-img me-2">
+                <span class="brand-text">SPaget</span>
             </a>
             
             <!-- Toggle sidebar button (mobile) -->
             <button class="btn btn-outline-light d-lg-none" type="button" id="sidebarToggle" aria-label="Toggle sidebar">
                 <i class="bi bi-list"></i>
             </button>
+            
+            <!-- Indicateurs de capacité dans le header (desktop uniquement) -->
+            <div class="header-capacity-indicators d-none d-lg-flex">
+                <div class="header-capacity-item">
+                    <i class="bi bi-funnel header-capacity-icon"></i>
+                    <span class="header-capacity-label">Total</span>
+                    <span class="header-capacity-value">{{ total_sp ?? 650 }}</span>
+                </div>
+                
+                <div class="header-capacity-item">
+                    <span class="header-capacity-label">Capacité</span>
+                    <span class="header-capacity-value header-capacity-highlight">{{ capacity ?? 400 }}</span>
+                </div>
+                
+                <div class="header-capacity-item">
+                    <span class="header-capacity-label">Delta</span>
+                    <span class="header-capacity-value header-capacity-negative">{{ delta ?? -250 }}</span>
+                </div>
+                
+                <div class="header-capacity-gauge">
+                    <div class="progress">
+                        <div class="progress-bar bg-warning" role="progressbar" 
+                             style="width: {{ ((capacity ?? 400) / (total_sp ?? 650) * 100) }}%" 
+                             aria-valuenow="{{ capacity ?? 400 }}" 
+                             aria-valuemin="0" 
+                             aria-valuemax="{{ total_sp ?? 650 }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bouton Synchroniser (desktop uniquement) -->
+            <div class="d-none d-lg-block me-3">
+                <button class="btn btn-outline-light btn-sync">
+                    <i class="bi bi-arrow-clockwise me-2"></i>
+                    <span>Synchroniser</span>
+                </button>
+            </div>
             
             <!-- Navigation items -->
             <div class="navbar-nav ms-auto">

@@ -27,6 +27,7 @@
     --sidebar-width: 250px;
     --sidebar-collapsed-width: 60px;
     --header-height: 60px;
+    --header-height-desktop: 140px;
     --right-panel-width: 350px;
 }
 
@@ -61,6 +62,37 @@ body {
 .logo-img {
     height: 32px;
     width: auto;
+    transition: height 0.2s ease;
+}
+
+/* Logo plus grand sur desktop */
+@media (min-width: 768px) {
+    .logo-img {
+        height: 120px;
+    }
+    
+    .header-main {
+        height: 140px;
+    }
+    
+    .sidebar {
+        min-height: calc(100vh - 140px);
+    }
+}
+
+/* Logo moyen sur tablette */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .logo-img {
+        height: 60px;
+    }
+    
+    .header-main {
+        height: 80px;
+    }
+    
+    .sidebar {
+        min-height: calc(100vh - 80px);
+    }
 }
 
 .brand-text {
@@ -68,6 +100,58 @@ body {
     font-weight: bold;
     color: var(--text-light);
     margin-left: 0.5rem;
+}
+
+/* Indicateurs de capacité dans le header */
+.header-capacity-indicators {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin: 0 2rem;
+}
+
+.header-capacity-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.header-capacity-icon {
+    color: var(--accent-gold);
+    font-size: 1.5rem;
+}
+
+.header-capacity-label {
+    font-size: 1rem;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.header-capacity-value {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.header-capacity-highlight {
+    color: var(--accent-gold);
+    background: rgba(243, 156, 18, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.header-capacity-negative {
+    color: #ff6b6b;
+}
+
+.header-capacity-gauge {
+    margin-left: 1rem;
+}
+
+.header-capacity-gauge .progress {
+    height: 12px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 6px;
+    width: 120px;
 }
 
 /* Sidebar */
@@ -190,6 +274,13 @@ body {
     color: var(--text-light);
     padding: 1rem 0;
     border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.capacity-indicators {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
 }
 
 .capacity-item {
@@ -327,7 +418,15 @@ body {
     letter-spacing: 0.05em;
 }
 
-.confidence-bar {
+/* Barre de progression */
+.progression-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 100px;
+}
+
+.progression-bar {
     width: 60px;
     height: 8px;
     background-color: #e9ecef;
@@ -335,20 +434,29 @@ body {
     overflow: hidden;
 }
 
-.confidence-fill {
+.progression-fill {
     height: 100%;
-    background: linear-gradient(90deg, #28a745, #ffc107, #dc3545);
+    background: linear-gradient(90deg, #dc3545 0%, #ffc107 50%, #28a745 100%);
     transition: width 0.3s ease;
+    border-radius: 4px;
 }
 
-.deps-count {
-    background-color: var(--accent-gold);
-    color: white;
-    padding: 0.125rem 0.5rem;
-    border-radius: 0.75rem;
+.progression-text {
     font-size: 0.75rem;
     font-weight: 600;
+    color: var(--text-muted);
+    min-width: 35px;
 }
+
+.progression-mobile {
+    margin-top: 0.5rem;
+}
+
+.progression-mobile .progression-text {
+    font-size: 0.875rem;
+    color: var(--text-dark);
+}
+
 
 .status-badge {
     padding: 0.25rem 0.75rem;
@@ -358,8 +466,13 @@ body {
     text-transform: uppercase;
 }
 
-.status-open {
-    background-color: var(--status-open);
+.status-ready {
+    background-color: #6c757d;
+    color: white;
+}
+
+.status-research {
+    background-color: #fd7e14;
     color: white;
 }
 
@@ -369,13 +482,59 @@ body {
 }
 
 .status-done {
-    background-color: var(--status-done);
+    background-color: #28a745;
     color: white;
 }
 
-.status-blocked {
-    background-color: var(--status-blocked);
-    color: white;
+/* Style pour l'estimation vide */
+.estimate-empty {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* Colonne Source */
+.story-source {
+    width: 80px;
+    text-align: center;
+}
+
+.source-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.source-logo {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.source-fallback {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+/* Source mobile */
+.source-mobile {
+    display: flex;
+    align-items: center;
+    margin: 0.25rem 0;
+}
+
+.source-logo-mobile {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+.source-fallback-mobile {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
 }
 
 .action-buttons {
@@ -395,7 +554,7 @@ body {
     transition: transform 0.3s ease;
     position: fixed;
     right: 0;
-    top: var(--header-height);
+    
     height: calc(100vh - var(--header-height));
     z-index: 1020;
 }
@@ -462,13 +621,6 @@ body {
     line-height: 1.4;
 }
 
-.dependency-item {
-    display: flex;
-    align-items: center;
-    padding: 0.5rem 0;
-    font-size: 0.875rem;
-    color: var(--text-dark);
-}
 
 .activity-item {
     padding: 0.75rem 0;

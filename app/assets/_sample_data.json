@@ -1,250 +1,574 @@
 {
   "sample_items": [
     {
-      "id": "1",
-      "number": "1",
+      "id": 1,
+      "number": "US-101",
       "title": "Implement search functionality",
-      "estimate": "8",
-      "estimate_unit": "SP",
-      "dev_estimate": "8",
-      "dev_unit": "R",
-      "team": "Frontend",
-      "team_color": "#17a2b8",
-      "confidence": 85,
-      "dependencies": 0,
-      "status": "Open",
-      "type": "Sustory",
+      "estimate_sp": 8,
+      "dev": "BR",
+      "team": "console",
+      "progression": 20,
+      "status": "In development",
+      "source": "jira",
+      "type": "Story",
       "sprint": "Sprint 12",
-      "assignee": "BR",
-      "assignee_avatar": "https://via.placeholder.com/24x24/6c757d/ffffff?text=BR",
       "description": "Develop a search feature allowing users to search for content within the application.",
       "checklist": [
         { "id": "check1", "text": "Create search API endpoint", "checked": true },
         { "id": "check2", "text": "Design search interface", "checked": true },
         { "id": "check3", "text": "Implement search filters", "checked": false }
       ],
-      "dependencies_list": [],
       "activity": [
         { "text": "Estimate changed from 5 to 8", "time": "3 hours ago" }
       ]
     },
     {
-      "id": "2",
-      "number": "2",
+      "id": 2,
+      "number": "US-102",
       "title": "Update deployment pipeline",
-      "estimate": "5",
-      "estimate_unit": "SP",
-      "dev_estimate": "5",
-      "dev_unit": "C",
-      "team": "DevOps",
-      "team_color": "#28a745",
-      "confidence": 90,
-      "dependencies": 1,
-      "status": "Open",
+      "estimate_sp": 5,
+      "dev": "Céline",
+      "team": "core",
+      "progression": 0,
+      "status": "Ready to R&D",
+      "source": "ado",
       "type": "Task",
       "sprint": "Sprint 12",
-      "assignee": "JD",
-      "assignee_avatar": "https://via.placeholder.com/24x24/28a745/ffffff?text=JD",
       "description": "Update the CI/CD pipeline to support new deployment strategies.",
       "checklist": [
-        { "id": "check4", "text": "Review current pipeline", "checked": true },
+        { "id": "check4", "text": "Review current pipeline", "checked": false },
         { "id": "check5", "text": "Implement blue-green deployment", "checked": false },
         { "id": "check6", "text": "Add rollback mechanism", "checked": false }
       ],
-      "dependencies_list": ["#1 Implement search functionality"],
       "activity": [
         { "text": "Task created", "time": "1 day ago" }
       ]
     },
     {
-      "id": "3",
-      "number": "3",
+      "id": 3,
+      "number": "US-103",
       "title": "Fix fort-bugs fix Call/hexdesp",
-      "estimate": "3",
-      "estimate_unit": "SPI",
-      "dev_estimate": "4",
-      "dev_unit": "BR",
-      "team": "Tore",
-      "team_color": "#ffc107",
-      "confidence": 70,
-      "dependencies": 1,
-      "status": "Open",
+      "estimate_sp": 3,
+      "dev": "Marc",
+      "team": "extend",
+      "progression": 50,
+      "status": "In development",
+      "source": "jira",
       "type": "Bug",
       "sprint": "Sprint 12",
-      "assignee": "MT",
-      "assignee_avatar": "https://via.placeholder.com/24x24/ffc107/000000?text=MT",
       "description": "Fix critical bugs in the Call/hexdesp module that are causing system instability.",
       "checklist": [
         { "id": "check7", "text": "Identify root cause", "checked": true },
         { "id": "check8", "text": "Implement fix", "checked": false },
         { "id": "check9", "text": "Test thoroughly", "checked": false }
       ],
-      "dependencies_list": ["#2 Update deployment pipeline"],
       "activity": [
         { "text": "Bug reported", "time": "2 days ago" },
-        { "text": "Assigned to MT", "time": "1 day ago" }
+        { "text": "Assigned to Marc", "time": "1 day ago" }
       ]
     },
     {
-      "id": "4",
-      "number": "4",
-      "title": "Sortofix MK-LaCssum punch ix",
-      "estimate": "35",
-      "estimate_unit": "SP",
-      "dev_estimate": "3",
-      "dev_unit": "S",
-      "team": "Uzuxov",
-      "team_color": "#dc3545",
-      "confidence": 60,
-      "dependencies": 0,
-      "status": "Open",
+      "id": 4,
+      "number": "US-104",
+      "title": "Sortofix MK-Lacssum punch ix",
+      "estimate_sp": 35,
+      "dev": "Lumi",
+      "team": "core",
+      "progression": 0,
+      "status": "Ready to develop",
+      "source": "ado",
       "type": "Epic",
       "sprint": "Sprint 13",
-      "assignee": "AK",
-      "assignee_avatar": "https://via.placeholder.com/24x24/dc3545/ffffff?text=AK",
-      "description": "Major refactoring of the MK-LaCssum module to improve performance and maintainability.",
+      "description": "Major refactoring of the MK-Lacssum module to improve performance and maintainability.",
       "checklist": [
         { "id": "check10", "text": "Analyze current architecture", "checked": false },
         { "id": "check11", "text": "Design new structure", "checked": false },
         { "id": "check12", "text": "Implement changes", "checked": false },
         { "id": "check13", "text": "Migration strategy", "checked": false }
       ],
-      "dependencies_list": [],
       "activity": [
         { "text": "Epic created", "time": "1 week ago" }
       ]
     },
     {
-      "id": "5",
-      "number": "5",
-      "title": "Opprove Rall cap-firm budget",
-      "estimate": "Lumi.",
-      "estimate_unit": "",
-      "dev_estimate": "Prem",
-      "dev_unit": "",
-      "team": "Open",
-      "team_color": "#6f42c1",
-      "confidence": 50,
-      "dependencies": 1,
-      "status": "OPEN",
+      "id": 5,
+      "number": "US-105",
+      "title": "Approve Roll cap-firm budget",
+      "estimate_sp": null,
+      "dev": "Anna",
+      "team": "e-invoice",
+      "progression": 0,
+      "status": "Ready to develop",
+      "source": "jira",
       "type": "Story",
       "sprint": "Backlog",
-      "assignee": "PM",
-      "assignee_avatar": "https://via.placeholder.com/24x24/6f42c1/ffffff?text=PM",
-      "description": "Review and approve the budget allocation for the Rall cap-firm project.",
+      "description": "Review and approve the budget allocation for the Roll cap-firm project.",
       "checklist": [
         { "id": "check14", "text": "Gather budget requirements", "checked": false },
         { "id": "check15", "text": "Review with stakeholders", "checked": false },
         { "id": "check16", "text": "Get final approval", "checked": false }
       ],
-      "dependencies_list": ["#4 Sortofix MK-LaCssum punch ix"],
       "activity": [
         { "text": "Moved to backlog", "time": "3 days ago" }
       ]
     },
     {
-      "id": "6",
-      "number": "6",
-      "title": "Improve profiling for Flairet Inbox",
-      "estimate": "13",
-      "estimate_unit": "SP",
-      "dev_estimate": "8",
-      "dev_unit": "LL",
-      "team": "Frontend",
-      "team_color": "#17a2b8",
-      "confidence": 80,
-      "dependencies": 0,
-      "status": "Open",
+      "id": 6,
+      "number": "US-106",
+      "title": "Improve profiling for Inbox",
+      "estimate_sp": 13,
+      "dev": "Lars",
+      "team": "console",
+      "progression": 10,
+      "status": "In development",
+      "source": "ado",
       "type": "Enhancement",
       "sprint": "Sprint 12",
-      "assignee": "LR",
-      "assignee_avatar": "https://via.placeholder.com/24x24/17a2b8/ffffff?text=LR",
-      "description": "Optimize performance profiling tools for the Flairet Inbox component.",
+      "description": "Optimize performance profiling tools for the Inbox component.",
       "checklist": [
         { "id": "check17", "text": "Profile current performance", "checked": true },
         { "id": "check18", "text": "Identify bottlenecks", "checked": false },
         { "id": "check19", "text": "Implement optimizations", "checked": false }
       ],
-      "dependencies_list": [],
       "activity": [
         { "text": "Performance analysis started", "time": "2 days ago" }
       ]
     },
     {
-      "id": "7",
-      "number": "7",
+      "id": 7,
+      "number": "US-107",
       "title": "Backend support for search index",
-      "estimate": "13",
-      "estimate_unit": "SP",
-      "dev_estimate": "Lister",
-      "dev_unit": "",
-      "team": "Open",
-      "team_color": "#fd7e14",
-      "confidence": 75,
-      "dependencies": 0,
-      "status": "OPEN",
+      "estimate_sp": 13,
+      "dev": "Lister",
+      "team": "core",
+      "progression": 0,
+      "status": "Ready to develop",
+      "source": "jira",
       "type": "Story",
       "sprint": "Sprint 12",
-      "assignee": "BS",
-      "assignee_avatar": "https://via.placeholder.com/24x24/fd7e14/ffffff?text=BS",
       "description": "Implement backend infrastructure to support search indexing and querying.",
       "checklist": [
         { "id": "check20", "text": "Design index structure", "checked": true },
         { "id": "check21", "text": "Implement indexing service", "checked": false },
         { "id": "check22", "text": "Add search endpoints", "checked": false }
       ],
-      "dependencies_list": [],
       "activity": [
         { "text": "Design phase completed", "time": "1 day ago" }
       ]
     },
     {
-      "id": "8",
-      "number": "8",
+      "id": 8,
+      "number": "US-108",
       "title": "UI refinements for profile page",
-      "estimate": "OPEN",
-      "estimate_unit": "",
-      "dev_estimate": "A",
-      "dev_unit": "",
-      "team": "Open",
-      "team_color": "#20c997",
-      "confidence": 65,
-      "dependencies": 0,
-      "status": "Open",
+      "estimate_sp": null,
+      "dev": "Aude",
+      "team": "extend",
+      "progression": 100,
+      "status": "Done",
+      "source": "ado",
       "type": "UI/UX",
       "sprint": "Sprint 13",
-      "assignee": "UD",
-      "assignee_avatar": "https://via.placeholder.com/24x24/20c997/ffffff?text=UD",
       "description": "Refine the user interface of the profile page based on user feedback.",
       "checklist": [
         { "id": "check23", "text": "Collect user feedback", "checked": true },
-        { "id": "check24", "text": "Create mockups", "checked": false },
-        { "id": "check25", "text": "Implement changes", "checked": false }
+        { "id": "check24", "text": "Create mockups", "checked": true },
+        { "id": "check25", "text": "Implement changes", "checked": true }
       ],
-      "dependencies_list": [],
       "activity": [
-        { "text": "User feedback collected", "time": "4 days ago" }
+        { "text": "User feedback collected", "time": "4 days ago" },
+        { "text": "Task completed", "time": "1 hour ago" }
+      ]
+    },
+    {
+      "id": 9,
+      "number": "US-109",
+      "title": "Add multi-language support",
+      "estimate_sp": 21,
+      "dev": "Sophie",
+      "team": "console",
+      "progression": 15,
+      "status": "In development",
+      "source": "jira",
+      "type": "Feature",
+      "sprint": "Sprint 14",
+      "description": "Implement internationalization for French and English languages.",
+      "checklist": [
+        { "id": "check26", "text": "Setup i18n framework", "checked": true },
+        { "id": "check27", "text": "Extract text strings", "checked": false },
+        { "id": "check28", "text": "Add language switcher", "checked": false }
+      ],
+      "activity": [
+        { "text": "Started development", "time": "2 days ago" }
+      ]
+    },
+    {
+      "id": 10,
+      "number": "US-110",
+      "title": "Optimize database queries",
+      "estimate_sp": 8,
+      "dev": "Thomas",
+      "team": "core",
+      "progression": 0,
+      "status": "Ready to develop",
+      "source": "ado",
+      "type": "Performance",
+      "sprint": "Sprint 14",
+      "description": "Improve database performance by optimizing slow queries.",
+      "checklist": [
+        { "id": "check29", "text": "Identify slow queries", "checked": false },
+        { "id": "check30", "text": "Add database indexes", "checked": false },
+        { "id": "check31", "text": "Test performance gains", "checked": false }
+      ],
+      "activity": [
+        { "text": "Task created", "time": "5 days ago" }
+      ]
+    },
+    {
+      "id": 11,
+      "number": "US-111",
+      "title": "Implement email notifications",
+      "estimate_sp": 13,
+      "dev": "Marie",
+      "team": "e-invoice",
+      "progression": 75,
+      "status": "In development",
+      "source": "jira",
+      "type": "Feature",
+      "sprint": "Sprint 13",
+      "description": "Add email notification system for invoice updates.",
+      "checklist": [
+        { "id": "check32", "text": "Setup email service", "checked": true },
+        { "id": "check33", "text": "Create templates", "checked": true },
+        { "id": "check34", "text": "Add user preferences", "checked": false }
+      ],
+      "activity": [
+        { "text": "Email service configured", "time": "3 days ago" }
+      ]
+    },
+    {
+      "id": 12,
+      "number": "US-112",
+      "title": "Fix memory leak in worker process",
+      "estimate_sp": 5,
+      "dev": "Alex",
+      "team": "core",
+      "progression": 100,
+      "status": "Done",
+      "source": "ado",
+      "type": "Bug",
+      "sprint": "Sprint 13",
+      "description": "Resolve memory leak causing worker process crashes.",
+      "checklist": [
+        { "id": "check35", "text": "Identify leak source", "checked": true },
+        { "id": "check36", "text": "Apply fix", "checked": true },
+        { "id": "check37", "text": "Test in production", "checked": true }
+      ],
+      "activity": [
+        { "text": "Fix deployed", "time": "1 day ago" }
+      ]
+    },
+    {
+      "id": 13,
+      "number": "US-113",
+      "title": "Add dark mode theme",
+      "estimate_sp": null,
+      "dev": "Julie",
+      "team": "extend",
+      "progression": 30,
+      "status": "In development",
+      "source": "jira",
+      "type": "Enhancement",
+      "sprint": "Sprint 14",
+      "description": "Implement dark mode theme for better user experience.",
+      "checklist": [
+        { "id": "check38", "text": "Design dark theme", "checked": true },
+        { "id": "check39", "text": "Update CSS variables", "checked": false },
+        { "id": "check40", "text": "Add theme switcher", "checked": false }
+      ],
+      "activity": [
+        { "text": "Design approved", "time": "2 days ago" }
+      ]
+    },
+    {
+      "id": 14,
+      "number": "US-114",
+      "title": "Upgrade React to v18",
+      "estimate_sp": 8,
+      "dev": "Pierre",
+      "team": "console",
+      "progression": 0,
+      "status": "Ready to develop",
+      "source": "ado",
+      "type": "Technical",
+      "sprint": "Sprint 15",
+      "description": "Upgrade React framework to version 18 for performance improvements.",
+      "checklist": [
+        { "id": "check41", "text": "Audit dependencies", "checked": false },
+        { "id": "check42", "text": "Update React version", "checked": false },
+        { "id": "check43", "text": "Test all components", "checked": false }
+      ],
+      "activity": [
+        { "text": "Task planned", "time": "1 week ago" }
+      ]
+    },
+    {
+      "id": 15,
+      "number": "US-115",
+      "title": "Implement PDF export feature",
+      "estimate_sp": 21,
+      "dev": "Camille",
+      "team": "e-invoice",
+      "progression": 45,
+      "status": "In development",
+      "source": "jira",
+      "type": "Feature",
+      "sprint": "Sprint 13",
+      "description": "Add ability to export invoices as PDF documents.",
+      "checklist": [
+        { "id": "check44", "text": "Setup PDF library", "checked": true },
+        { "id": "check45", "text": "Create PDF templates", "checked": true },
+        { "id": "check46", "text": "Add export button", "checked": false }
+      ],
+      "activity": [
+        { "text": "Templates created", "time": "4 days ago" }
+      ]
+    },
+    {
+      "id": 16,
+      "number": "US-116",
+      "title": "Add two-factor authentication",
+      "estimate_sp": 13,
+      "dev": "Nicolas",
+      "team": "core",
+      "progression": 0,
+      "status": "Ready to develop",
+      "source": "ado",
+      "type": "Security",
+      "sprint": "Sprint 15",
+      "description": "Implement 2FA for enhanced account security.",
+      "checklist": [
+        { "id": "check47", "text": "Research 2FA providers", "checked": false },
+        { "id": "check48", "text": "Implement TOTP", "checked": false },
+        { "id": "check49", "text": "Add backup codes", "checked": false }
+      ],
+      "activity": [
+        { "text": "Security review requested", "time": "6 days ago" }
+      ]
+    },
+    {
+      "id": 17,
+      "number": "US-117",
+      "title": "Optimize image loading performance",
+      "estimate_sp": 5,
+      "dev": "Emma",
+      "team": "console",
+      "progression": 80,
+      "status": "In development",
+      "source": "jira",
+      "type": "Performance",
+      "sprint": "Sprint 14",
+      "description": "Implement lazy loading and image compression.",
+      "checklist": [
+        { "id": "check50", "text": "Add lazy loading", "checked": true },
+        { "id": "check51", "text": "Implement WebP format", "checked": true },
+        { "id": "check52", "text": "Test performance gains", "checked": false }
+      ],
+      "activity": [
+        { "text": "WebP implementation done", "time": "1 day ago" }
+      ]
+    },
+    {
+      "id": 18,
+      "number": "US-118",
+      "title": "Create admin dashboard",
+      "estimate_sp": null,
+      "dev": "David",
+      "team": "extend",
+      "progression": 25,
+      "status": "In development",
+      "source": "ado",
+      "type": "Feature",
+      "sprint": "Sprint 15",
+      "description": "Build comprehensive admin panel for system management.",
+      "checklist": [
+        { "id": "check53", "text": "Design admin layout", "checked": true },
+        { "id": "check54", "text": "Add user management", "checked": false },
+        { "id": "check55", "text": "Implement analytics", "checked": false }
+      ],
+      "activity": [
+        { "text": "Layout design completed", "time": "3 days ago" }
+      ]
+    },
+    {
+      "id": 19,
+      "number": "US-119",
+      "title": "Fix invoice calculation bug",
+      "estimate_sp": 3,
+      "dev": "Sarah",
+      "team": "e-invoice",
+      "progression": 100,
+      "status": "Done",
+      "source": "jira",
+      "type": "Bug",
+      "sprint": "Sprint 13",
+      "description": "Resolve incorrect tax calculation in invoice generation.",
+      "checklist": [
+        { "id": "check56", "text": "Identify calculation error", "checked": true },
+        { "id": "check57", "text": "Fix tax logic", "checked": true },
+        { "id": "check58", "text": "Update unit tests", "checked": true }
+      ],
+      "activity": [
+        { "text": "Bug fixed and tested", "time": "2 hours ago" }
+      ]
+    },
+    {
+      "id": 20,
+      "number": "US-120",
+      "title": "Implement real-time notifications",
+      "estimate_sp": 34,
+      "dev": "Lucas",
+      "team": "core",
+      "progression": 10,
+      "status": "In development",
+      "source": "ado",
+      "type": "Feature",
+      "sprint": "Sprint 15",
+      "description": "Add WebSocket-based real-time notification system.",
+      "checklist": [
+        { "id": "check59", "text": "Setup WebSocket server", "checked": true },
+        { "id": "check60", "text": "Create notification UI", "checked": false },
+        { "id": "check61", "text": "Add notification types", "checked": false }
+      ],
+      "activity": [
+        { "text": "WebSocket server configured", "time": "5 days ago" }
+      ]
+    },
+    {
+      "id": 21,
+      "number": "US-121",
+      "title": "Add keyboard shortcuts",
+      "estimate_sp": 8,
+      "dev": "Léa",
+      "team": "console",
+      "progression": 60,
+      "status": "In development",
+      "source": "jira",
+      "type": "Enhancement",
+      "sprint": "Sprint 14",
+      "description": "Implement keyboard shortcuts for common actions.",
+      "checklist": [
+        { "id": "check62", "text": "Define shortcut mapping", "checked": true },
+        { "id": "check63", "text": "Implement key handlers", "checked": true },
+        { "id": "check64", "text": "Add help modal", "checked": false }
+      ],
+      "activity": [
+        { "text": "Key handlers implemented", "time": "2 days ago" }
+      ]
+    },
+    {
+      "id": 22,
+      "number": "US-122",
+      "title": "Upgrade database to PostgreSQL 15",
+      "estimate_sp": 21,
+      "dev": "Antoine",
+      "team": "core",
+      "progression": 0,
+      "status": "Ready to develop",
+      "source": "ado",
+      "type": "Technical",
+      "sprint": "Sprint 16",
+      "description": "Migrate from PostgreSQL 13 to 15 for performance improvements.",
+      "checklist": [
+        { "id": "check65", "text": "Plan migration strategy", "checked": false },
+        { "id": "check66", "text": "Test compatibility", "checked": false },
+        { "id": "check67", "text": "Execute migration", "checked": false }
+      ],
+      "activity": [
+        { "text": "Migration planned", "time": "1 week ago" }
+      ]
+    },
+    {
+      "id": 23,
+      "number": "US-123",
+      "title": "Implement data export API",
+      "estimate_sp": null,
+      "dev": "Maxime",
+      "team": "e-invoice",
+      "progression": 35,
+      "status": "In development",
+      "source": "jira",
+      "type": "API",
+      "sprint": "Sprint 14",
+      "description": "Create REST API for bulk data export functionality.",
+      "checklist": [
+        { "id": "check68", "text": "Design API endpoints", "checked": true },
+        { "id": "check69", "text": "Implement export logic", "checked": false },
+        { "id": "check70", "text": "Add rate limiting", "checked": false }
+      ],
+      "activity": [
+        { "text": "API design approved", "time": "4 days ago" }
+      ]
+    },
+    {
+      "id": 24,
+      "number": "US-124",
+      "title": "Fix responsive layout issues",
+      "estimate_sp": 5,
+      "dev": "Chloé",
+      "team": "extend",
+      "progression": 90,
+      "status": "In development",
+      "source": "ado",
+      "type": "Bug",
+      "sprint": "Sprint 13",
+      "description": "Resolve mobile layout problems on various screen sizes.",
+      "checklist": [
+        { "id": "check71", "text": "Identify layout issues", "checked": true },
+        { "id": "check72", "text": "Fix CSS breakpoints", "checked": true },
+        { "id": "check73", "text": "Test on devices", "checked": false }
+      ],
+      "activity": [
+        { "text": "CSS fixes applied", "time": "1 day ago" }
+      ]
+    },
+    {
+      "id": 25,
+      "number": "US-125",
+      "title": "Add audit logging system",
+      "estimate_sp": 13,
+      "dev": "Julien",
+      "team": "core",
+      "progression": 0,
+      "status": "Ready to develop",
+      "source": "jira",
+      "type": "Security",
+      "sprint": "Sprint 15",
+      "description": "Implement comprehensive audit logging for compliance.",
+      "checklist": [
+        { "id": "check74", "text": "Define audit events", "checked": false },
+        { "id": "check75", "text": "Setup logging infrastructure", "checked": false },
+        { "id": "check76", "text": "Create audit reports", "checked": false }
+      ],
+      "activity": [
+        { "text": "Requirements gathered", "time": "1 week ago" }
       ]
     }
   ],
   "capacity_data": {
-    "total_sp": 320,
-    "capacity": 255,
-    "delta": -70
+    "total_sp": 650,
+    "capacity": 400,
+    "delta": -250
   },
   "team_colors": {
-    "Frontend": "#17a2b8",
-    "Backend": "#28a745",
-    "DevOps": "#ffc107",
-    "Design": "#6f42c1",
-    "QA": "#fd7e14",
-    "Open": "#6c757d"
+    "console": "#17a2b8",
+    "core": "#28a745", 
+    "extend": "#ffc107",
+    "e-invoice": "#6f42c1"
   },
   "status_mapping": {
-    "Open": "open",
-    "OPEN": "open",
-    "In Progress": "in-progress",
-    "Done": "done",
-    "Blocked": "blocked"
+    "Ready to develop": "ready",
+    "Ready to R&D": "research",
+    "In development": "in-progress", 
+    "Done": "done"
   }
 }

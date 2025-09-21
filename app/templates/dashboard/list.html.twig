@@ -4,47 +4,39 @@
 
 {% block body %}
 <div class="dashboard-container">
-    <!-- Bandeau de capacité -->
-    <div class="capacity-banner">
+    <!-- Bandeau de capacité (mobile/tablette uniquement) -->
+    <div class="capacity-banner d-lg-none">
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-md-8">
-                    <div class="row g-3">
+                    <div class="capacity-indicators">
                         <!-- Total SP -->
-                        <div class="col-auto">
-                            <div class="capacity-item">
-                                <i class="bi bi-funnel capacity-icon"></i>
-                                <span class="capacity-label">Total</span>
-                                <span class="capacity-value">{{ total_sp ?? 320 }}</span>
-                            </div>
+                        <div class="capacity-item">
+                            <i class="bi bi-funnel capacity-icon"></i>
+                            <span class="capacity-label">Total</span>
+                            <span class="capacity-value">{{ total_sp ?? 320 }}</span>
                         </div>
                         
-                        <!-- Capacity -->
-                        <div class="col-auto">
-                            <div class="capacity-item">
-                                <span class="capacity-label">Capacity</span>
-                                <span class="capacity-value capacity-highlight">{{ capacity ?? 255 }}</span>
-                            </div>
+                        <!-- Capacité -->
+                        <div class="capacity-item">
+                            <span class="capacity-label">Capacité</span>
+                            <span class="capacity-value capacity-highlight">{{ capacity ?? 255 }}</span>
                         </div>
                         
                         <!-- Delta -->
-                        <div class="col-auto">
-                            <div class="capacity-item">
-                                <span class="capacity-label">Delta</span>
-                                <span class="capacity-value capacity-negative">{{ delta ?? -70 }}</span>
-                            </div>
+                        <div class="capacity-item">
+                            <span class="capacity-label">Delta</span>
+                            <span class="capacity-value capacity-negative">{{ delta ?? -70 }}</span>
                         </div>
                         
                         <!-- Jauge de capacité -->
-                        <div class="col-auto">
-                            <div class="capacity-gauge">
-                                <div class="progress">
-                                    <div class="progress-bar bg-danger" role="progressbar" 
-                                         style="width: {{ ((capacity ?? 255) / (total_sp ?? 320) * 100) }}%" 
-                                         aria-valuenow="{{ capacity ?? 255 }}" 
-                                         aria-valuemin="0" 
-                                         aria-valuemax="{{ total_sp ?? 320 }}">
-                                    </div>
+                        <div class="capacity-gauge">
+                            <div class="progress">
+                                <div class="progress-bar bg-danger" role="progressbar" 
+                                     style="width: {{ ((capacity ?? 255) / (total_sp ?? 320) * 100) }}%" 
+                                     aria-valuenow="{{ capacity ?? 255 }}" 
+                                     aria-valuemin="0" 
+                                     aria-valuemax="{{ total_sp ?? 320 }}">
                                 </div>
                             </div>
                         </div>
@@ -72,8 +64,8 @@
                         <th scope="col" class="col-est">Est.</th>
                         <th scope="col" class="col-dev">Dev</th>
                         <th scope="col" class="col-team">Team</th>
-                        <th scope="col" class="col-conf">Conf.</th>
-                        <th scope="col" class="col-deps">Deps</th>
+                        <th scope="col" class="col-source">Source</th>
+                        <th scope="col" class="col-progression">Progression</th>
                         <th scope="col" class="col-status">Status</th>
                         <th scope="col" class="col-actions"></th>
                     </tr>
@@ -88,32 +80,62 @@
                             </div>
                         </td>
                         <td class="story-estimate">
-                            <span class="estimate-value">{{ item.estimate }}</span>
-                            <span class="estimate-unit">{{ item.estimate_unit ?? 'SP' }}</span>
+                            {% if item.estimate_sp is not null %}
+                                <span class="estimate-value">{{ item.estimate_sp }}</span>
+                                <span class="estimate-unit">SP</span>
+                            {% else %}
+                                <span class="estimate-empty">—</span>
+                            {% endif %}
                         </td>
                         <td class="story-dev">
-                            <span class="dev-value">{{ item.dev_estimate }}</span>
-                            <span class="dev-unit">{{ item.dev_unit }}</span>
+                            {{ item.dev }}
                         </td>
                         <td class="story-team">
-                            <span class="team-badge" style="background-color: {{ item.team_color ?? '#17a2b8' }}">
+                            {% set team_colors = {
+                                'console': '#17a2b8',
+                                'core': '#28a745',
+                                'extend': '#ffc107',
+                                'e-invoice': '#6f42c1'
+                            } %}
+                            <span class="team-badge" style="background-color: {{ team_colors[item.team] ?? '#6c757d' }}">
                                 {{ item.team }}
                             </span>
                         </td>
-                        <td class="story-confidence">
-                            <div class="confidence-bar">
-                                <div class="confidence-fill" style="width: {{ item.confidence ?? 80 }}%"></div>
+                        <td class="story-source">
+                            <div class="source-container">
+                                {% if item.source == 'jira' %}
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" 
+                                         alt="Jira" 
+                                         class="source-logo" 
+                                         onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                                    <span class="source-fallback" style="display:none;">Jira</span>
+                                {% elseif item.source == 'ado' %}
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" 
+                                         alt="Azure DevOps" 
+                                         class="source-logo" 
+                                         onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                                    <span class="source-fallback" style="display:none;">AZDO</span>
+                                {% else %}
+                                    <span class="source-fallback">{{ item.source|upper }}</span>
+                                {% endif %}
                             </div>
                         </td>
-                        <td class="story-deps">
-                            {% if item.dependencies > 0 %}
-                                <span class="deps-count">{{ item.dependencies }}</span>
-                            {% else %}
-                                <i class="bi bi-dash text-muted"></i>
-                            {% endif %}
+                        <td class="story-progression">
+                            <div class="progression-container">
+                                <div class="progression-bar">
+                                    <div class="progression-fill" style="width: {{ item.progression ?? 0 }}%"></div>
+                                </div>
+                                <span class="progression-text">{{ item.progression ?? 0 }}%</span>
+                            </div>
                         </td>
                         <td class="story-status">
-                            <span class="status-badge status-{{ item.status|lower }}">
+                            {% set status_classes = {
+                                'Ready to develop': 'ready',
+                                'Ready to R&D': 'research',
+                                'In development': 'in-progress',
+                                'Done': 'done'
+                            } %}
+                            <span class="status-badge status-{{ status_classes[item.status] ?? 'ready' }}">
                                 {{ item.status }}
                             </span>
                         </td>
@@ -144,19 +166,57 @@
                     <span class="story-title">{{ item.title }}</span>
                 </div>
                 <div class="story-card-estimate">
-                    <span class="estimate-value">{{ item.estimate }}</span>
-                    <span class="estimate-unit">{{ item.estimate_unit ?? 'SP' }}</span>
+                    {% if item.estimate_sp is not null %}
+                        <span class="estimate-value">{{ item.estimate_sp }}</span>
+                        <span class="estimate-unit">SP</span>
+                    {% else %}
+                        <span class="estimate-empty">—</span>
+                    {% endif %}
                 </div>
             </div>
             <div class="story-card-body">
                 <div class="story-card-meta">
-                    <span class="team-badge" style="background-color: {{ item.team_color ?? '#17a2b8' }}">
-                        {{ item.team }}
-                    </span>
-                    <span class="status-badge status-{{ item.status|lower }}">
-                        {{ item.status }}
-                    </span>
+                {% set team_colors = {
+                    'console': '#17a2b8',
+                    'core': '#28a745',
+                    'extend': '#ffc107',
+                    'e-invoice': '#6f42c1'
+                } %}
+                <span class="team-badge" style="background-color: {{ team_colors[item.team] ?? '#6c757d' }}">
+                    {{ item.team }}
+                </span>
+                
+                <div class="source-mobile">
+                    {% if item.source == 'jira' %}
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" 
+                             alt="Jira" 
+                             class="source-logo-mobile" 
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                        <span class="source-fallback-mobile" style="display:none;">Jira</span>
+                    {% elseif item.source == 'ado' %}
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" 
+                             alt="Azure DevOps" 
+                             class="source-logo-mobile" 
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                        <span class="source-fallback-mobile" style="display:none;">AZDO</span>
+                    {% else %}
+                        <span class="source-fallback-mobile">{{ item.source|upper }}</span>
+                    {% endif %}
                 </div>
+                
+                {% set status_classes = {
+                    'Ready to develop': 'ready',
+                    'Ready to R&D': 'research',
+                    'In development': 'in-progress',
+                    'Done': 'done'
+                } %}
+                <span class="status-badge status-{{ status_classes[item.status] ?? 'ready' }}">
+                    {{ item.status }}
+                </span>
+                <div class="progression-mobile">
+                    <span class="progression-text">{{ item.progression ?? 0 }}%</span>
+                </div>
+            </div>
             </div>
         </div>
         {% endfor %}

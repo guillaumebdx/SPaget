@@ -16,7 +16,11 @@
 </head>
 <body class="d-flex flex-column min-vh-100">
     <!-- Header -->
-    {% include 'partials/header.html.twig' %}
+    {% include 'partials/header.html.twig' with {
+        'total_sp': total_sp ?? 650,
+        'capacity': capacity ?? 400,
+        'delta': delta ?? -250
+    } %}
     
     <div class="container-fluid flex-grow-1 p-0">
         <div class="row g-0 h-100">

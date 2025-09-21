@@ -215,18 +215,15 @@ class SPagetApp {
         const stories = {
             '1': {
                 title: 'Implement search functionality',
-                type: 'Sustory',
+                type: 'Story',
                 sprint: 'Sprint 12',
                 assignee: 'BR',
-                status: '3 h ago',
+                status: 'In development',
                 description: 'Develop a search feature allowing users to search for content within the application.',
                 checklist: [
                     { id: 'check1', text: 'Create search API endpoint', checked: true },
                     { id: 'check2', text: 'Design search interface', checked: true },
                     { id: 'check3', text: 'Implement search filters', checked: false }
-                ],
-                dependencies: [
-                    '#4 Backend support for search index'
                 ],
                 activity: [
                     { text: 'Estimate changed from 5 to 8', time: '3 hours ago' }
@@ -267,9 +264,6 @@ class SPagetApp {
         // Checklist
         this.updateChecklist(data.checklist);
         
-        // Dépendances
-        this.updateDependencies(data.dependencies);
-        
         // Activité
         this.updateActivity(data.activity);
     }
@@ -295,24 +289,6 @@ class SPagetApp {
         });
     }
     
-    /**
-     * Mettre à jour les dépendances
-     */
-    updateDependencies(dependencies) {
-        const container = document.getElementById('panel-dependencies');
-        if (!container || !dependencies) return;
-        
-        container.innerHTML = '';
-        dependencies.forEach(dep => {
-            const div = document.createElement('div');
-            div.className = 'dependency-item';
-            div.innerHTML = `
-                <i class="bi bi-arrow-right-circle text-muted me-2"></i>
-                <span>${dep}</span>
-            `;
-            container.appendChild(div);
-        });
-    }
     
     /**
      * Mettre à jour l'activité
