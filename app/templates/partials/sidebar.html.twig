@@ -1,0 +1,74 @@
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar-content">
+        <!-- Navigation principale -->
+        <nav class="sidebar-nav">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ path('dashboard') ?? '#' }}" aria-current="page">
+                        <i class="bi bi-speedometer2 sidebar-icon"></i>
+                        <span class="sidebar-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-kanban sidebar-icon"></i>
+                        <span class="sidebar-text">Backlog</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-calendar3 sidebar-icon"></i>
+                        <span class="sidebar-text">Sprints</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-people sidebar-icon"></i>
+                        <span class="sidebar-text">Équipes</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-graph-up sidebar-icon"></i>
+                        <span class="sidebar-text">Rapports</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <!-- Section projets -->
+        <div class="sidebar-section mt-4">
+            <h6 class="sidebar-heading">
+                <span class="sidebar-text">Projets</span>
+                <button class="btn btn-sm btn-outline-light ms-auto" aria-label="Ajouter un projet">
+                    <i class="bi bi-plus"></i>
+                </button>
+            </h6>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-circle-fill text-success sidebar-icon small"></i>
+                        <span class="sidebar-text">Frontend</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-circle-fill text-info sidebar-icon small"></i>
+                        <span class="sidebar-text">Backend</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-circle-fill text-warning sidebar-icon small"></i>
+                        <span class="sidebar-text">DevOps</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Bouton de collapse (desktop) -->
+    <button class="sidebar-toggle d-none d-lg-block" id="sidebarCollapseBtn" aria-label="Réduire la sidebar">
+        <i class="bi bi-chevron-left"></i>
+    </button>
+</aside>

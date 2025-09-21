@@ -1,0 +1,165 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dashboard - {{ parent() }}{% endblock %}
+
+{% block body %}
+<div class="dashboard-container">
+    <!-- Bandeau de capacité -->
+    <div class="capacity-banner">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <div class="row g-3">
+                        <!-- Total SP -->
+                        <div class="col-auto">
+                            <div class="capacity-item">
+                                <i class="bi bi-funnel capacity-icon"></i>
+                                <span class="capacity-label">Total</span>
+                                <span class="capacity-value">{{ total_sp ?? 320 }}</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Capacity -->
+                        <div class="col-auto">
+                            <div class="capacity-item">
+                                <span class="capacity-label">Capacity</span>
+                                <span class="capacity-value capacity-highlight">{{ capacity ?? 255 }}</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Delta -->
+                        <div class="col-auto">
+                            <div class="capacity-item">
+                                <span class="capacity-label">Delta</span>
+                                <span class="capacity-value capacity-negative">{{ delta ?? -70 }}</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Jauge de capacité -->
+                        <div class="col-auto">
+                            <div class="capacity-gauge">
+                                <div class="progress">
+                                    <div class="progress-bar bg-danger" role="progressbar" 
+                                         style="width: {{ ((capacity ?? 255) / (total_sp ?? 320) * 100) }}%" 
+                                         aria-valuenow="{{ capacity ?? 255 }}" 
+                                         aria-valuemin="0" 
+                                         aria-valuemax="{{ total_sp ?? 320 }}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 text-end">
+                    <button class="btn btn-outline-light btn-sync">
+                        <i class="bi bi-arrow-clockwise me-2"></i>
+                        <span class="d-none d-sm-inline">Simulate</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Tableau des User Stories -->
+    <div class="stories-table-container">
+        <div class="table-responsive">
+            <table class="table table-hover stories-table">
+                <thead>
+                    <tr>
+                        <th scope="col" class="col-num">#</th>
+                        <th scope="col" class="col-title">Title</th>
+                        <th scope="col" class="col-est">Est.</th>
+                        <th scope="col" class="col-dev">Dev</th>
+                        <th scope="col" class="col-team">Team</th>
+                        <th scope="col" class="col-conf">Conf.</th>
+                        <th scope="col" class="col-deps">Deps</th>
+                        <th scope="col" class="col-status">Status</th>
+                        <th scope="col" class="col-actions"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in items ?? sample_items %}
+                    <tr class="story-row" data-story-id="{{ item.id }}" data-bs-toggle="tooltip" title="Cliquer pour voir les détails">
+                        <td class="story-number">{{ item.number ?? loop.index }}</td>
+                        <td class="story-title">
+                            <div class="title-content">
+                                {{ item.title }}
+                            </div>
+                        </td>
+                        <td class="story-estimate">
+                            <span class="estimate-value">{{ item.estimate }}</span>
+                            <span class="estimate-unit">{{ item.estimate_unit ?? 'SP' }}</span>
+                        </td>
+                        <td class="story-dev">
+                            <span class="dev-value">{{ item.dev_estimate }}</span>
+                            <span class="dev-unit">{{ item.dev_unit }}</span>
+                        </td>
+                        <td class="story-team">
+                            <span class="team-badge" style="background-color: {{ item.team_color ?? '#17a2b8' }}">
+                                {{ item.team }}
+                            </span>
+                        </td>
+                        <td class="story-confidence">
+                            <div class="confidence-bar">
+                                <div class="confidence-fill" style="width: {{ item.confidence ?? 80 }}%"></div>
+                            </div>
+                        </td>
+                        <td class="story-deps">
+                            {% if item.dependencies > 0 %}
+                                <span class="deps-count">{{ item.dependencies }}</span>
+                            {% else %}
+                                <i class="bi bi-dash text-muted"></i>
+                            {% endif %}
+                        </td>
+                        <td class="story-status">
+                            <span class="status-badge status-{{ item.status|lower }}">
+                                {{ item.status }}
+                            </span>
+                        </td>
+                        <td class="story-actions">
+                            <div class="action-buttons">
+                                <button class="btn btn-sm btn-outline-secondary" title="Éditer">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-secondary" title="Plus d'options">
+                                    <i class="bi bi-three-dots"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- Version mobile : Liste des cartes -->
+    <div class="stories-mobile d-md-none">
+        {% for item in items ?? sample_items %}
+        <div class="story-card" data-story-id="{{ item.id }}">
+            <div class="story-card-header">
+                <div class="story-card-title">
+                    <span class="story-number">#{{ item.number ?? loop.index }}</span>
+                    <span class="story-title">{{ item.title }}</span>
+                </div>
+                <div class="story-card-estimate">
+                    <span class="estimate-value">{{ item.estimate }}</span>
+                    <span class="estimate-unit">{{ item.estimate_unit ?? 'SP' }}</span>
+                </div>
+            </div>
+            <div class="story-card-body">
+                <div class="story-card-meta">
+                    <span class="team-badge" style="background-color: {{ item.team_color ?? '#17a2b8' }}">
+                        {{ item.team }}
+                    </span>
+                    <span class="status-badge status-{{ item.status|lower }}">
+                        {{ item.status }}
+                    </span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

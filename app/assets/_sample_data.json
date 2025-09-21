@@ -1,0 +1,250 @@
+{
+  "sample_items": [
+    {
+      "id": "1",
+      "number": "1",
+      "title": "Implement search functionality",
+      "estimate": "8",
+      "estimate_unit": "SP",
+      "dev_estimate": "8",
+      "dev_unit": "R",
+      "team": "Frontend",
+      "team_color": "#17a2b8",
+      "confidence": 85,
+      "dependencies": 0,
+      "status": "Open",
+      "type": "Sustory",
+      "sprint": "Sprint 12",
+      "assignee": "BR",
+      "assignee_avatar": "https://via.placeholder.com/24x24/6c757d/ffffff?text=BR",
+      "description": "Develop a search feature allowing users to search for content within the application.",
+      "checklist": [
+        { "id": "check1", "text": "Create search API endpoint", "checked": true },
+        { "id": "check2", "text": "Design search interface", "checked": true },
+        { "id": "check3", "text": "Implement search filters", "checked": false }
+      ],
+      "dependencies_list": [],
+      "activity": [
+        { "text": "Estimate changed from 5 to 8", "time": "3 hours ago" }
+      ]
+    },
+    {
+      "id": "2",
+      "number": "2",
+      "title": "Update deployment pipeline",
+      "estimate": "5",
+      "estimate_unit": "SP",
+      "dev_estimate": "5",
+      "dev_unit": "C",
+      "team": "DevOps",
+      "team_color": "#28a745",
+      "confidence": 90,
+      "dependencies": 1,
+      "status": "Open",
+      "type": "Task",
+      "sprint": "Sprint 12",
+      "assignee": "JD",
+      "assignee_avatar": "https://via.placeholder.com/24x24/28a745/ffffff?text=JD",
+      "description": "Update the CI/CD pipeline to support new deployment strategies.",
+      "checklist": [
+        { "id": "check4", "text": "Review current pipeline", "checked": true },
+        { "id": "check5", "text": "Implement blue-green deployment", "checked": false },
+        { "id": "check6", "text": "Add rollback mechanism", "checked": false }
+      ],
+      "dependencies_list": ["#1 Implement search functionality"],
+      "activity": [
+        { "text": "Task created", "time": "1 day ago" }
+      ]
+    },
+    {
+      "id": "3",
+      "number": "3",
+      "title": "Fix fort-bugs fix Call/hexdesp",
+      "estimate": "3",
+      "estimate_unit": "SPI",
+      "dev_estimate": "4",
+      "dev_unit": "BR",
+      "team": "Tore",
+      "team_color": "#ffc107",
+      "confidence": 70,
+      "dependencies": 1,
+      "status": "Open",
+      "type": "Bug",
+      "sprint": "Sprint 12",
+      "assignee": "MT",
+      "assignee_avatar": "https://via.placeholder.com/24x24/ffc107/000000?text=MT",
+      "description": "Fix critical bugs in the Call/hexdesp module that are causing system instability.",
+      "checklist": [
+        { "id": "check7", "text": "Identify root cause", "checked": true },
+        { "id": "check8", "text": "Implement fix", "checked": false },
+        { "id": "check9", "text": "Test thoroughly", "checked": false }
+      ],
+      "dependencies_list": ["#2 Update deployment pipeline"],
+      "activity": [
+        { "text": "Bug reported", "time": "2 days ago" },
+        { "text": "Assigned to MT", "time": "1 day ago" }
+      ]
+    },
+    {
+      "id": "4",
+      "number": "4",
+      "title": "Sortofix MK-LaCssum punch ix",
+      "estimate": "35",
+      "estimate_unit": "SP",
+      "dev_estimate": "3",
+      "dev_unit": "S",
+      "team": "Uzuxov",
+      "team_color": "#dc3545",
+      "confidence": 60,
+      "dependencies": 0,
+      "status": "Open",
+      "type": "Epic",
+      "sprint": "Sprint 13",
+      "assignee": "AK",
+      "assignee_avatar": "https://via.placeholder.com/24x24/dc3545/ffffff?text=AK",
+      "description": "Major refactoring of the MK-LaCssum module to improve performance and maintainability.",
+      "checklist": [
+        { "id": "check10", "text": "Analyze current architecture", "checked": false },
+        { "id": "check11", "text": "Design new structure", "checked": false },
+        { "id": "check12", "text": "Implement changes", "checked": false },
+        { "id": "check13", "text": "Migration strategy", "checked": false }
+      ],
+      "dependencies_list": [],
+      "activity": [
+        { "text": "Epic created", "time": "1 week ago" }
+      ]
+    },
+    {
+      "id": "5",
+      "number": "5",
+      "title": "Opprove Rall cap-firm budget",
+      "estimate": "Lumi.",
+      "estimate_unit": "",
+      "dev_estimate": "Prem",
+      "dev_unit": "",
+      "team": "Open",
+      "team_color": "#6f42c1",
+      "confidence": 50,
+      "dependencies": 1,
+      "status": "OPEN",
+      "type": "Story",
+      "sprint": "Backlog",
+      "assignee": "PM",
+      "assignee_avatar": "https://via.placeholder.com/24x24/6f42c1/ffffff?text=PM",
+      "description": "Review and approve the budget allocation for the Rall cap-firm project.",
+      "checklist": [
+        { "id": "check14", "text": "Gather budget requirements", "checked": false },
+        { "id": "check15", "text": "Review with stakeholders", "checked": false },
+        { "id": "check16", "text": "Get final approval", "checked": false }
+      ],
+      "dependencies_list": ["#4 Sortofix MK-LaCssum punch ix"],
+      "activity": [
+        { "text": "Moved to backlog", "time": "3 days ago" }
+      ]
+    },
+    {
+      "id": "6",
+      "number": "6",
+      "title": "Improve profiling for Flairet Inbox",
+      "estimate": "13",
+      "estimate_unit": "SP",
+      "dev_estimate": "8",
+      "dev_unit": "LL",
+      "team": "Frontend",
+      "team_color": "#17a2b8",
+      "confidence": 80,
+      "dependencies": 0,
+      "status": "Open",
+      "type": "Enhancement",
+      "sprint": "Sprint 12",
+      "assignee": "LR",
+      "assignee_avatar": "https://via.placeholder.com/24x24/17a2b8/ffffff?text=LR",
+      "description": "Optimize performance profiling tools for the Flairet Inbox component.",
+      "checklist": [
+        { "id": "check17", "text": "Profile current performance", "checked": true },
+        { "id": "check18", "text": "Identify bottlenecks", "checked": false },
+        { "id": "check19", "text": "Implement optimizations", "checked": false }
+      ],
+      "dependencies_list": [],
+      "activity": [
+        { "text": "Performance analysis started", "time": "2 days ago" }
+      ]
+    },
+    {
+      "id": "7",
+      "number": "7",
+      "title": "Backend support for search index",
+      "estimate": "13",
+      "estimate_unit": "SP",
+      "dev_estimate": "Lister",
+      "dev_unit": "",
+      "team": "Open",
+      "team_color": "#fd7e14",
+      "confidence": 75,
+      "dependencies": 0,
+      "status": "OPEN",
+      "type": "Story",
+      "sprint": "Sprint 12",
+      "assignee": "BS",
+      "assignee_avatar": "https://via.placeholder.com/24x24/fd7e14/ffffff?text=BS",
+      "description": "Implement backend infrastructure to support search indexing and querying.",
+      "checklist": [
+        { "id": "check20", "text": "Design index structure", "checked": true },
+        { "id": "check21", "text": "Implement indexing service", "checked": false },
+        { "id": "check22", "text": "Add search endpoints", "checked": false }
+      ],
+      "dependencies_list": [],
+      "activity": [
+        { "text": "Design phase completed", "time": "1 day ago" }
+      ]
+    },
+    {
+      "id": "8",
+      "number": "8",
+      "title": "UI refinements for profile page",
+      "estimate": "OPEN",
+      "estimate_unit": "",
+      "dev_estimate": "A",
+      "dev_unit": "",
+      "team": "Open",
+      "team_color": "#20c997",
+      "confidence": 65,
+      "dependencies": 0,
+      "status": "Open",
+      "type": "UI/UX",
+      "sprint": "Sprint 13",
+      "assignee": "UD",
+      "assignee_avatar": "https://via.placeholder.com/24x24/20c997/ffffff?text=UD",
+      "description": "Refine the user interface of the profile page based on user feedback.",
+      "checklist": [
+        { "id": "check23", "text": "Collect user feedback", "checked": true },
+        { "id": "check24", "text": "Create mockups", "checked": false },
+        { "id": "check25", "text": "Implement changes", "checked": false }
+      ],
+      "dependencies_list": [],
+      "activity": [
+        { "text": "User feedback collected", "time": "4 days ago" }
+      ]
+    }
+  ],
+  "capacity_data": {
+    "total_sp": 320,
+    "capacity": 255,
+    "delta": -70
+  },
+  "team_colors": {
+    "Frontend": "#17a2b8",
+    "Backend": "#28a745",
+    "DevOps": "#ffc107",
+    "Design": "#6f42c1",
+    "QA": "#fd7e14",
+    "Open": "#6c757d"
+  },
+  "status_mapping": {
+    "Open": "open",
+    "OPEN": "open",
+    "In Progress": "in-progress",
+    "Done": "done",
+    "Blocked": "blocked"
+  }
+}
